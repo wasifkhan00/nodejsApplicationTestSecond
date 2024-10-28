@@ -1,5 +1,11 @@
 {
     "rewrites": [
       { "source": "/(.*)", "destination": "/api/server.js" }
-       ]
+       ],
+
+     "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/server.js"  // Routes all API requests to the server.js
+    },
   }
