@@ -1,11 +1,19 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/api/server.js" }
-       ],
-
-     "routes": [
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/server.js"  // Routes all API requests to the server.js
+      "dest": "/api/server.js"
     },
-  }
+    {
+      "src": "/",
+      "dest": "/api/server.js"  // Optional: Route the root to your server.js
+    }
+  ]
+}
